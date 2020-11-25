@@ -30,7 +30,7 @@ def send_last(message):
 
 @bot.message_handler(content_types=["text"])
 def calculate_by_exec(message):
-    if not re.fullmatch(r"[0-9()\-+*%/]*", message.text):
+    if not re.fullmatch(r"[0-9()\-+*%/.]*", message.text):
         bot.send_message(message.chat.id, "Это не является допустимым для калькулятора выражением")
         return
     if str(message.chat.id) not in users.keys():
